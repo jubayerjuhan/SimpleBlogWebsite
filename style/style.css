@@ -154,7 +154,7 @@ footer {
 }
 
 .new-post-button:hover{
-    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -10px, 0);
 }
 
 .navigation a{
