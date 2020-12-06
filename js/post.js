@@ -13,6 +13,13 @@ window.onload = () => {
 
 const getPost = () => {
     // CODE GOES HERE
+    fetch(API_URL, {
+        method : "GET"
+    }).then((response) =>{
+        return response.json;
+    }).then((data) =>{
+        buildPost(data);
+    })
 }
 
 const buildPost = (data) => {
