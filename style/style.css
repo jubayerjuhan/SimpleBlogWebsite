@@ -9,7 +9,6 @@ body {
 }
 
 header{
-    background-image: url(/assets/banner.jpeg);
     min-height: 320px;
     background-position: center;
     color: white;
@@ -19,6 +18,10 @@ header{
     justify-content: center;
     position: relative;
     background-size: cover;
+}
+
+.home-page header{
+    background-image: url(/assets/banner.jpeg);
 }
 
 header > *{
