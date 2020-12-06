@@ -9,20 +9,37 @@ const API_BASE_URL = "http://localhost:3000/";
 
 window.onload = () => {
     getPost();
+    getPostIdParam();
+}
+
+const getPostIdParam = () =>{
+    const querystring = window.location.search;
+    const urlParams = new URLSearchParams(querystring);
+    return urlParams.get("id");
 }
 
 const getPost = () => {
     // CODE GOES HERE
-    fetch(API_URL, {
+    const postId = getPostIdParam();
+    const url = `${API_URL}${postId}`
+    fetch(url, {
         method : "GET"
     }).then((response) =>{
-        return response.json;
+        return response.json();
     }).then((data) =>{
-        buildPost(data);
+        buildPoost(data);
     })
 }
 
-const buildPost = (data) => {
+const buildPoost = (datas) => {
+    const postDate = new Date(parseInt(datas.added_date)).toDateString();
     // HINT: Convert the date number to a Date string 
+    console.log(datas)
+    document.querySelector("header").style.backgroundImage = `url(${API_BASE_URL}${datas.post_image})`
+    document.getElementById("individual-post-title").innerText = datas.title;
+    document.getElementById("individual-post-date").innerText = `Published On ${postDate}`;
+    document.getElementById("individual-post-content").innerText = datas.content;
+
+
 }
 
