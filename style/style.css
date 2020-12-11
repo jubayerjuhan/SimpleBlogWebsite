@@ -120,6 +120,11 @@ footer {
     font-weight: 600;
     color: #333;
     line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 
 }
 
