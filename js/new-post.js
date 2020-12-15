@@ -15,15 +15,19 @@ const submitNewPost = () => {
 
 
     let data = new FormData();
-    data.append = ("post_image", input.files[0]);
-    data.append = ("title", title);
-    data.append = ("content", content);
+    data.append("post_image", input.files[0]);
+    data.append("title", title);
+    data.append("content", content);
+
+    console.log(data);
 
 
     fetch(API_URL, {
         method: "POST",
         body: data
     }).then(() => {
-        console.log("We Are Good");
+        setTimeout(()=>{
+            window.location.href= "index.html"
+        }, 2000)
     })
 }

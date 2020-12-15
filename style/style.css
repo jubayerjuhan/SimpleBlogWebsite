@@ -20,7 +20,7 @@ header{
     background-size: cover;
 }
 
-.home-page header{
+.home-page header, .new-post-page header{
     background-image: url(/assets/banner.jpeg);
 }
 

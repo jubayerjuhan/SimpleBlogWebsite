@@ -43,6 +43,10 @@ form > * {
     align-items: center;
 }
 
+.dev-name a{
+    text-decoration: none;
+    color: #9F9EAA;
+}
 
 
 
